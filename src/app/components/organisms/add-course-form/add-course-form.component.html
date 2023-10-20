@@ -1,0 +1,27 @@
+<form class=" w-[95%] h-[480px] p-[2%] sm:py-4 sm:h-[40%] left-[2%] top-[110%] sm:top-[75%] absolute border-t border-zinc-300 ">
+   <app-label class=" text-stone-400  text-xl sm:text-[36px] font-['Poppins']">ADD NEW COURSE</app-label>
+    <div class=" sm:flex  sm:space-x-4 ">
+        <div class="h-[72px] w-[98%] sm:w-[100%] block ">
+            <app-input  placeHolder="Name*"></app-input>
+            <app-label class="text-rose-500 text-base  font-['Poppins'] ">Name is required</app-label>
+        </div>
+        <div class="h-[72px] w-[98%] sm:w-[100%] block">
+            <app-input  placeHolder="Author *"></app-input>
+            <app-label class="text-rose-500 text-base  font-['Poppins'] ">Author is required</app-label>
+        </div>
+    </div>
+    <div class="sm:flex sm:space-x-4">
+        <div class="h-[72px] w-[98%] sm:w-[100%] block">
+            <app-input  placeHolder="Progress[number only]*"></app-input>
+            <app-label class="text-rose-500 text-base  font-['Poppins'] ">Progress is required</app-label>
+        </div>
+        <div class="h-[72px]  w-[98%] sm:w-[100%] block">
+            <app-input  placeHolder="Lesson number [number only]*"></app-input>
+            <app-label class="h-[50%] text-rose-500 text-base  font-['Poppins'] ">Lesson number is required</app-label>
+        </div>
+    </div>
+
+    <div class=" px-[4%]  py-[0.5%] left-[20%] sm:left-[78%] absolute  bg-teal-600 rounded-[5px] border border-teal-600 justify-center items-center inline-flex">
+        <app-button class=" text-white text-2xl  font-['Poppins']">SAVE COURSE</app-button>
+    </div>
+</form >

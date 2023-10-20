@@ -1,0 +1,23 @@
+  colors: {
+      'black': '#000000',
+      'dark-green': '#009688',
+      'gray': '#908D8D',
+      'light-gray': '#DADADA',
+      'orange': '#ff585B',
+      'white': '#ffffff',
+      'blue': 'rgb(59 130 246)',
+    },
+    fontSize: {
+      sm: '1.25rem',
+      base: '1.5rem',
+      xl: '2rem',
+      '2xl': '2.25rem',
+      '3xl': '2.5rem',
+      '4xl': '3rem',
+      '5xl': '3.8'
+    },
+     borderRadius: {
+        default: '5px'
+       }
+    
+---------------------------------------------------

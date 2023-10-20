@@ -1,0 +1,25 @@
+{
+    "courses": [
+      {
+        "id": 1,
+        "name": "Master The Crystal Programming Language",
+        "author": "Descholar",
+        "progress": 64,
+        "lessons": 24
+      },
+      {
+        "id": 2,
+        "name": "Master The Angular 16",
+        "author": "Descholar",
+        "progress": 50,
+        "lessons": 10
+      },
+      {
+        "id": 3,
+        "name": "Master The Data Structure and Algorithm with JS",
+        "author": "Descholar",
+        "progress": 15,
+        "lessons": 5
+      }
+    ]
+  }
