@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,10 +20,12 @@ import { CoursesComponent } from './components/organisms/courses/courses.compone
 import { CourseNameComponent } from './components/molecules/course-name/course-name.component';
 import { CourseProgressComponent } from './components/molecules/course-progress/course-progress.component';
 import { CourseLessonsComponent } from './components/molecules/course-lessons/course-lessons.component';
-import { StoreModule,provideStore } from '@ngrx/store';
-import { EffectsModule, provideEffects } from '@ngrx/effects';
-import { appEffects, appStore } from './store/store';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule} from '@ngrx/effects';
 import { CourseService } from './services/course.service';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { courseReducer } from './store/course.Reducers';
+import { CourseEffects } from './store/course.Effects';
 
 
 
@@ -52,14 +54,11 @@ import { CourseService } from './services/course.service';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([])
+    StoreModule.forRoot({courseState:courseReducer}, {}),
+    EffectsModule.forRoot([CourseEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
-  providers: [
-    provideStore(appStore),
-    provideEffects(appEffects),
-    CourseService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import {State, Store} from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {AppState} from '../../../store/store';
-import { Course } from 'src/app/Course';
-import * as CourseActions from '../../../store/actions';
-import { courseSelector } from 'src/app/store/selectors';
-import { state } from '@angular/animations';
+import { CourseInterface, CourseStateInterface } from 'src/app/store/Model/Course'; 
+import * as CourseActions from '../../../store/course.Actions';
+import { courseSelector } from 'src/app/store/course.Selectors';
 
 
 @Component({
@@ -14,36 +12,38 @@ import { state } from '@angular/animations';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent {
-  courses$?: Observable<Course[]>;
-  courses: Course[] = [];
+  courses$?: Observable<CourseInterface[]>;
+  courses: CourseInterface[] = [];
   isLoading$?: Observable<boolean>
 
-  constructor(private store: Store<AppState>) {
+ constructor(private store:Store<CourseStateInterface>) {
     this.courses$ = this.store.select(courseSelector);
-    this.isLoading$ = this.store.select(state => state.course.loading);
+    this.isLoading$ = this.store.select(state => state.loading);
+    console.warn(this.isLoading$)
+    console.warn(this.courses$)
     this.loadCourses();
   }
 
   loadCourses() {
     this.store.dispatch(CourseActions.loadCourses());
   }
-
+ 
   addCourse (index:number) {
-    const course: Course = {
+    const course: CourseInterface = {
       id: index,
-      name: 'a',
-      author: 'b',
+      name: 'Testing',
+      author: 'Tester',
       progress: 1,
       lessons: 1
     };
 
     this.store.dispatch(CourseActions.addCourse({course}));
   }
-
+/*
   updateCourse(course:Course) {
-    this.store.dispatch(CourseActions.updateCourse({...course }))
+    this.store.dispatch(CourseActions.updateCourse())
   }
-
+*/
 
 
 }
