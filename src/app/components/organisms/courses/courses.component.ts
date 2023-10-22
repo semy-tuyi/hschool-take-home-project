@@ -19,8 +19,6 @@ export class CoursesComponent {
  constructor(private store:Store<CourseStateInterface>) {
     this.courses$ = this.store.select(courseSelector);
     this.isLoading$ = this.store.select(state => state.loading);
-    console.warn(this.isLoading$)
-    console.warn(this.courses$)
     this.loadCourses();
   }
 

@@ -22,7 +22,6 @@ import { CourseProgressComponent } from './components/molecules/course-progress/
 import { CourseLessonsComponent } from './components/molecules/course-lessons/course-lessons.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule} from '@ngrx/effects';
-import { CourseService } from './services/course.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { courseReducer } from './store/course.Reducers';
 import { CourseEffects } from './store/course.Effects';
@@ -54,7 +53,7 @@ import { CourseEffects } from './store/course.Effects';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    StoreModule.forRoot({courseState:courseReducer}, {}),
+    StoreModule.forRoot({course:courseReducer}, {}),
     EffectsModule.forRoot([CourseEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
